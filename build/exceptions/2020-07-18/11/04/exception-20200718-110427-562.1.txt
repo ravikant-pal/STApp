@@ -1,0 +1,141 @@
+EXCEPTION STACK:
+
+
+  Exception: org.apache.tapestry5.ioc.internal.OperationException
+    Message: 
+      trace: Streaming classpath:META-INF/assets/tapestry5/bootstrap/css/bootstrap.css (compressed)
+
+  Exception: org.apache.catalina.connector.ClientAbortException
+    Message: 
+
+  Exception: java.net.SocketException
+    Message: Broken pipe (Write failed)
+
+  Stack trace:
+
+  - java.net.SocketOutputStream.socketWrite0(Native Method)
+  - java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:111)
+  - java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+  - org.apache.coyote.http11.InternalOutputBuffer.realWriteBytes(InternalOutputBuffer.java:215)
+  - org.apache.tomcat.util.buf.ByteChunk.flushBuffer(ByteChunk.java:462)
+  - org.apache.tomcat.util.buf.ByteChunk.append(ByteChunk.java:366)
+  - org.apache.coyote.http11.InternalOutputBuffer$OutputStreamOutputBuffer.doWrite(InternalOutputBuffer.java:240)
+  - org.apache.coyote.http11.filters.IdentityOutputFilter.doWrite(IdentityOutputFilter.java:84)
+  - org.apache.coyote.http11.AbstractOutputBuffer.doWrite(AbstractOutputBuffer.java:192)
+  - org.apache.coyote.Response.doWrite(Response.java:505)
+  - org.apache.catalina.connector.OutputBuffer.realWriteBytes(OutputBuffer.java:383)
+  - org.apache.tomcat.util.buf.ByteChunk.flushBuffer(ByteChunk.java:462)
+  - org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:334)
+  - org.apache.catalina.connector.OutputBuffer.close(OutputBuffer.java:283)
+  - org.apache.catalina.connector.CoyoteOutputStream.close(CoyoteOutputStream.java:108)
+  - org.apache.tapestry5.internal.services.ResourceStreamerImpl.streamResource(ResourceStreamerImpl.java:231)
+  - org.apache.tapestry5.internal.services.ResourceStreamerImpl$1.perform(ResourceStreamerImpl.java:116)
+  - org.apache.tapestry5.internal.services.ResourceStreamerImpl$1.perform(ResourceStreamerImpl.java:107)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.perform(OperationTrackerImpl.java:110)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.perform(PerThreadOperationTracker.java:84)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.perform(RegistryImpl.java:1266)
+  - org.apache.tapestry5.internal.services.ResourceStreamerImpl.streamResource(ResourceStreamerImpl.java:106)
+  - $ResourceStreamer_3d310439571.streamResource(Unknown Source)
+  - org.apache.tapestry5.internal.services.assets.ChecksumPath.stream(ChecksumPath.java:67)
+  - org.apache.tapestry5.internal.services.assets.ClasspathAssetRequestHandler.handleAssetRequest(ClasspathAssetRequestHandler.java:67)
+  - org.apache.tapestry5.internal.services.AssetDispatcher.dispatch(AssetDispatcher.java:122)
+  - $Dispatcher_3d31043956f.dispatch(Unknown Source)
+  - $Dispatcher_3d310439578.dispatch(Unknown Source)
+  - $Dispatcher_3d31043956d.dispatch(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$RequestHandlerTerminator.service(TapestryModule.java:305)
+  - org.apache.tapestry5.internal.services.RequestErrorFilter.service(RequestErrorFilter.java:26)
+  - $RequestHandler_3d31043956e.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$3.service(TapestryModule.java:848)
+  - $RequestHandler_3d31043956e.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$2.service(TapestryModule.java:838)
+  - $RequestHandler_3d31043956e.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.StaticFilesFilter.service(StaticFilesFilter.java:89)
+  - $RequestHandler_3d31043956e.service(Unknown Source)
+  - com.alok.services.AppModule$1.service(AppModule.java:116)
+  - $RequestFilter_3d310439568.service(Unknown Source)
+  - $RequestHandler_3d31043956e.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter$2.invoke(CheckForUpdatesFilter.java:105)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter$2.invoke(CheckForUpdatesFilter.java:95)
+  - org.apache.tapestry5.ioc.internal.util.ConcurrentBarrier.withRead(ConcurrentBarrier.java:83)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter.service(CheckForUpdatesFilter.java:119)
+  - $RequestHandler_3d31043956e.service(Unknown Source)
+  - $RequestHandler_3d310439562.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$HttpServletRequestHandlerTerminator.service(TapestryModule.java:256)
+  - org.apache.tapestry5.internal.gzip.GZipFilter.service(GZipFilter.java:59)
+  - $HttpServletRequestHandler_3d310439564.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.IgnoredPathsFilter.service(IgnoredPathsFilter.java:62)
+  - $HttpServletRequestFilter_3d31043955f.service(Unknown Source)
+  - $HttpServletRequestHandler_3d310439564.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$1.service(TapestryModule.java:798)
+  - $HttpServletRequestHandler_3d310439564.service(Unknown Source)
+  - $HttpServletRequestHandler_3d31043955e.service(Unknown Source)
+  - org.apache.tapestry5.TapestryFilter.doFilter(TapestryFilter.java:166)
+  - org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+  - org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+  - org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+  - org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+  - org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+  - org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+  - org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:99)
+  - org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:936)
+  - org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+  - org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+  - org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1004)
+  - org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:589)
+  - org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310)
+  - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+  - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+  - java.lang.Thread.run(Thread.java:748)
+
+REQUEST:
+
+Basic Information:
+
+      contextPath: /STApp
+           method: GET
+             path: /assets/meta/z13daa619/tapestry5/bootstrap/css/bootstrap.css
+           locale: en_US
+       serverName: localhost
+       remoteHost: 0:0:0:0:0:0:0:1
+
+Headers:
+
+           accept: text/css,*/*;q=0.1
+  accept-encoding: gzip, deflate
+  accept-language: en-US,en;q=0.5
+       connection: keep-alive
+             host: localhost:8080
+          referer: http://localhost:8080/STApp/registration
+       user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:78.0) Gecko/20100101 Firefox/78.0
+
+SYSTEM INFORMATION:
+
+Memory:
+      199,676,240 bytes free
+      341,311,488 bytes total
+      954,728,448 bytes max
+
+23 Threads:
+                                     Reference Handler WAITING, daemon, priority 10
+                                             Finalizer WAITING, daemon, priority 8
+                                     Signal Dispatcher RUNNABLE, daemon, priority 9
+                                                  main WAITING
+                                    Monitor Ctrl-Break RUNNABLE, daemon
+  ContainerBackgroundProcessor[StandardEngine[Tomcat]] TIMED_WAITING, daemon
+                              http-bio-8080-Acceptor-0 RUNNABLE, daemon
+                            http-bio-8080-AsyncTimeout TIMED_WAITING, daemon
+                                  http-bio-8080-exec-1 WAITING, daemon
+                                       pool-1-thread-1 TIMED_WAITING
+                                  http-bio-8080-exec-2 TIMED_WAITING, daemon
+*                                 http-bio-8080-exec-3 RUNNABLE, daemon
+                                  http-bio-8080-exec-4 TIMED_WAITING, daemon
+                                  http-bio-8080-exec-5 TIMED_WAITING, daemon
+                                  http-bio-8080-exec-6 TIMED_WAITING, daemon
+                                  http-bio-8080-exec-7 TIMED_WAITING, daemon
+                                  http-bio-8080-exec-8 TIMED_WAITING, daemon
+                                  http-bio-8080-exec-9 TIMED_WAITING, daemon
+                                 http-bio-8080-exec-10 TIMED_WAITING, daemon
+                                 http-bio-8080-exec-13 TIMED_WAITING, daemon
+                                 http-bio-8080-exec-14 TIMED_WAITING, daemon
+                                 http-bio-8080-exec-12 TIMED_WAITING, daemon
+                                 http-bio-8080-exec-11 TIMED_WAITING, daemon

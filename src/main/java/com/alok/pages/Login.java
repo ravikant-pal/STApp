@@ -1,16 +1,21 @@
 package com.alok.pages;
 
+import com.alok.entities.Employee;
 import org.apache.tapestry5.alerts.AlertManager;
 import org.apache.tapestry5.annotations.InjectComponent;
+import org.apache.tapestry5.annotations.InjectPage;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.corelib.components.Form;
 import org.apache.tapestry5.corelib.components.PasswordField;
 import org.apache.tapestry5.corelib.components.TextField;
 import org.apache.tapestry5.ioc.annotations.Inject;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 import org.slf4j.Logger;
 
-public class Login
-{
+public class Login {
+
   @Inject
   private Logger logger;
 
@@ -26,35 +31,51 @@ public class Login
   @InjectComponent("password")
   private PasswordField passwordField;
 
+  @Inject
+  private Session session;
+
+  @InjectPage
+  private Dashboard dashboard;
+
   @Property
   private String email;
 
   @Property
   private String password;
 
+  @InjectPage
+  private Details details;
 
 
-  void onValidateFromLogin()
-  {
-    if ( !email.equals("users@tapestry.apache.org"))
-      login.recordError(emailField, "Try with user: users@tapestry.apache.org");
+  void onValidateFromLogin() {
+    Criteria criteria = session.createCriteria(Employee.class)
+            .add(Restrictions.eq("email", email));
 
-    if ( !password.equals("Tapestry5"))
-      login.recordError(passwordField, "Try with password: Tapestry5");
+    Object result = criteria.uniqueResult();
+    if (result != null) {
+      Employee employee = (Employee) result;
+      if(!(employee.getEmail().equals(email) && employee.getPassword().equals(password))) {
+        login.recordError(emailField, " Invalid! ");
+        login.recordError(passwordField, " Invalid! ");
+      }
+    } else  {
+      login.recordError(emailField, " Invalid! ");
+      login.recordError(passwordField, " Invalid! ");
+    }
   }
 
-  Object onSuccessFromLogin()
-  {
+
+  Object onSuccessFromLogin() {
+    Employee employee = (Employee)session.createCriteria(Employee.class)
+            .add(Restrictions.eq("email", email)).uniqueResult();
     logger.info("Login successful!");
     alertManager.success("Welcome aboard!");
-
-    return Index.class;
+    dashboard.set(employee.getId());
+    return dashboard;
   }
 
-  void onFailureFromLogin()
-  {
+  void onFailureFromLogin() {
     logger.warn("Login error!");
     alertManager.error("I'm sorry but I can't log you in!");
   }
-
 }

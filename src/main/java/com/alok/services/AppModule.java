@@ -57,7 +57,11 @@ public class AppModule
         // the first locale name is the default when there's no reasonable match).
         configuration.add(SymbolConstants.SUPPORTED_LOCALES, "en");
 
-              // You should change the passphrase immediately; the HMAC passphrase is used to secure
+
+        // Set the HMAC pass phrase to secure object data serialized to client
+//        configuration.add(SymbolConstants.HMAC_PASSPHRASE, "");
+
+        // You should change the passphrase immediately; the HMAC passphrase is used to secure
         // the hidden field data stored in forms to encrypt and digitally sign client-side data.
         configuration.add(SymbolConstants.HMAC_PASSPHRASE, "change this immediately");
     }
@@ -138,4 +142,5 @@ public class AppModule
 
         configuration.add("Timing", filter);
     }
+
 }
