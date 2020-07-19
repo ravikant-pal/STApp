@@ -7,8 +7,14 @@ This project is Simple Tapestry Application
 ### 2. Employee Login.
 ![Screenshots](Screenshots/emp_login.png "emp login page screenshot")
 
-### 3. Login Failed.
+### 3. Employee Sign up.
+![Screenshots](Screenshots/signup.png "home page screenshot")
+
+### 4. Login Failed.
 ![Screenshots](Screenshots/emp_login_failed.png "login failed page screenshot")
 
-### 4. Employee Dashboard.
+### 6. Employee Dashboard.
 ![Screenshots](Screenshots/emp_dashboard.png "home page screenshot")
+
+### 6. All Employees Details.
+![Screenshots](Screenshots/emps_details.png "home page screenshot")
