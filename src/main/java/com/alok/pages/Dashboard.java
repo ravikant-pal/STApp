@@ -3,7 +3,8 @@ package com.alok.pages;
 import com.alok.entities.Employee;
 import com.alok.services.service.EmployeeService;
 import org.apache.tapestry5.annotations.Property;
-import org.apache.tapestry5.ioc.annotations.Inject;
+
+import javax.ejb.EJB;
 
 
 public class Dashboard {
@@ -11,7 +12,7 @@ public class Dashboard {
     @Property
     private long personId;
 
-    @Inject
+    @EJB
     private EmployeeService employeeService;
 
     @Property

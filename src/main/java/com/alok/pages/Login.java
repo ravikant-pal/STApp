@@ -48,9 +48,6 @@ public class Login {
   @Inject
   private EmployeeService employeeService;
 
-
-
-
   void onValidateFromLogin() {
     System.out.println(validateEmployeeService+"=================================>");
     if(!validateEmployeeService.validate(email,password)) {

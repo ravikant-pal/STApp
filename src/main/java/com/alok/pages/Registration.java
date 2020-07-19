@@ -11,6 +11,7 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 
 import org.slf4j.Logger;
 
+
 public class Registration {
     @Inject
     private Logger logger;
