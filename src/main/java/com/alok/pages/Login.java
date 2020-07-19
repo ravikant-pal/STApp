@@ -1,6 +1,8 @@
 package com.alok.pages;
 
 import com.alok.entities.Employee;
+import com.alok.services.Impl.ValidateEmployeeServiceImpl;
+import com.alok.services.service.EmployeeService;
 import org.apache.tapestry5.alerts.AlertManager;
 import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.InjectPage;
@@ -9,9 +11,6 @@ import org.apache.tapestry5.corelib.components.Form;
 import org.apache.tapestry5.corelib.components.PasswordField;
 import org.apache.tapestry5.corelib.components.TextField;
 import org.apache.tapestry5.ioc.annotations.Inject;
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.criterion.Restrictions;
 import org.slf4j.Logger;
 
 public class Login {
@@ -31,9 +30,6 @@ public class Login {
   @InjectComponent("password")
   private PasswordField passwordField;
 
-  @Inject
-  private Session session;
-
   @InjectPage
   private Dashboard dashboard;
 
@@ -46,19 +42,18 @@ public class Login {
   @InjectPage
   private Details details;
 
+  @Inject
+  private ValidateEmployeeServiceImpl validateEmployeeService;
+
+  @Inject
+  private EmployeeService employeeService;
+
+
+
 
   void onValidateFromLogin() {
-    Criteria criteria = session.createCriteria(Employee.class)
-            .add(Restrictions.eq("email", email));
-
-    Object result = criteria.uniqueResult();
-    if (result != null) {
-      Employee employee = (Employee) result;
-      if(!(employee.getEmail().equals(email) && employee.getPassword().equals(password))) {
-        login.recordError(emailField, " Invalid! ");
-        login.recordError(passwordField, " Invalid! ");
-      }
-    } else  {
+    System.out.println(validateEmployeeService+"=================================>");
+    if(!validateEmployeeService.validate(email,password)) {
       login.recordError(emailField, " Invalid! ");
       login.recordError(passwordField, " Invalid! ");
     }
@@ -66,8 +61,7 @@ public class Login {
 
 
   Object onSuccessFromLogin() {
-    Employee employee = (Employee)session.createCriteria(Employee.class)
-            .add(Restrictions.eq("email", email)).uniqueResult();
+    Employee employee = employeeService.getByEmail(email);
     logger.info("Login successful!");
     alertManager.success("Welcome aboard!");
     dashboard.set(employee.getId());

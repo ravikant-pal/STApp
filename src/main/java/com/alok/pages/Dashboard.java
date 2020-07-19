@@ -1,14 +1,10 @@
 package com.alok.pages;
 
-import com.alok.dto.EmployeeDTO;
 import com.alok.entities.Employee;
+import com.alok.services.service.EmployeeService;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.ioc.annotations.Inject;
-import org.hibernate.Session;
-import org.hibernate.criterion.Restrictions;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Dashboard {
 
@@ -16,7 +12,7 @@ public class Dashboard {
     private long personId;
 
     @Inject
-    private Session session;
+    private EmployeeService employeeService;
 
     @Property
     private Employee employee;
@@ -39,8 +35,7 @@ public class Dashboard {
     // To return more than one parameter, use Long[], or List<Long>, or Object[], or List<Object>.
 
     Long onPassivate() {
-        employee = (Employee)session.createCriteria(Employee.class)
-                .add(Restrictions.eq("id", personId)).uniqueResult();
+        employee = employeeService.getById(personId);
         return personId;
     }
 }
