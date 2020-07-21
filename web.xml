@@ -1,43 +1,54 @@
+<!--
 <?xml version="1.0" encoding="UTF-8"?>
 
 <web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
     version="2.4">
 
-    <display-name>STApp Tapestry 5 Application</display-name>
+    <display-name>Tap22 Tapestry 5 Application</display-name>
     <context-param>
-        <!--
+        &lt;!&ndash;
         The only significant configuration for Tapestry 5, this informs Tapestry
         of where to look for pages, components and mixins.
-        -->
+        &ndash;&gt;
         <param-name>tapestry.app-package</param-name>
-        <param-value>com.alok</param-value>
+        <param-value>com</param-value>
     </context-param>
 
-    <!--
+    &lt;!&ndash;
     Specify some additional Modules for two different execution
     modes: development and qa.
     Remember that the default execution mode is production
-    -->
+    &ndash;&gt;
     <context-param>
         <param-name>tapestry.development-modules</param-name>
-        <param-value>com.alok.services.DevelopmentModule</param-value>
+        <param-value>
+            com.services.DevelopmentModule
+        </param-value>
     </context-param>
     <context-param>
         <param-name>tapestry.qa-modules</param-name>
-        <param-value>com.alok.services.QaModule</param-value>
+        <param-value>
+            com.services.QaModule
+        </param-value>
     </context-param>
+
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>/WEB-INF/applicationContext.xml</param-value>
     </context-param>
 
 
-    <!-- Filter configuration -->
     <filter>
         <filter-name>app</filter-name>
+        &lt;!&ndash; Special filter that adds in a T5 IoC module derived from the Spring WebApplicationContext. &ndash;&gt;
         <filter-class>org.apache.tapestry5.spring.TapestrySpringFilter</filter-class>
     </filter>
+
+&lt;!&ndash;    <filter>
+        <filter-name>app</filter-name>
+        <filter-class>org.apache.tapestry5.TapestryFilter</filter-class>
+    </filter>&ndash;&gt;
 
     <filter-mapping>
         <filter-name>app</filter-name>
@@ -51,4 +62,4 @@
         <location>/error404</location>
     </error-page>
 
-</web-app>
+</web-app>-->
