@@ -1,10 +1,11 @@
-package com.alok.services.dao;
+package com.alok.dao;
 
 import com.alok.entities.Employee;
 
+
 import java.util.List;
 
-public interface EmployeeDao<E, L extends Number> {
+public interface EmployeeDao {
      Employee findById(Long id);
      Employee findByEmail(String email);
      List<Employee> findAll();

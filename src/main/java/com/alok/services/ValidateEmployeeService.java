@@ -1,4 +1,4 @@
-package com.alok.services.service;
+package com.alok.services;
 
 
 public interface ValidateEmployeeService {

@@ -2,28 +2,28 @@ EXCEPTION STACK:
 
 
          Exception: org.apache.tapestry5.internal.services.RenderQueueException
-           Message: Render queue error in BeginRender[Index:layout.pagelink_0]: Error obtaining injected value for field com.alok.pages.Registration.employeeService: No service implements the interface com.alok.services.service.EmployeeService.
+           Message: Render queue error in BeginRender[Index:layout.pagelink_0]: Error obtaining injected value for field com.alok.pages.Registration.employeeService: No service implements the interface com.alok.services.EmployeeService.
   activeComponents: InternalComponentResources[Index]
                     InternalComponentResources[Index:layout]
                     InternalComponentResources[Index:layout.pagelink_0]
           location: classpath:com/alok/components/Layout.tml, line 38
 
          Exception: org.apache.tapestry5.ioc.internal.util.TapestryException
-           Message: Error obtaining injected value for field com.alok.pages.Registration.employeeService: No service implements the interface com.alok.services.service.EmployeeService.
+           Message: Error obtaining injected value for field com.alok.pages.Registration.employeeService: No service implements the interface com.alok.services.EmployeeService.
           location: classpath:com/alok/components/Layout.tml, line 38
 
          Exception: org.apache.tapestry5.ioc.internal.OperationException
-           Message: Error obtaining injected value for field com.alok.pages.Registration.employeeService: No service implements the interface com.alok.services.service.EmployeeService.
+           Message: Error obtaining injected value for field com.alok.pages.Registration.employeeService: No service implements the interface com.alok.services.EmployeeService.
              trace: Handling page render request for page Index
                     Creating instantiator for component class com.alok.pages.Registration
                     Running component class transformations on com.alok.pages.Registration
                     Injecting field  com.alok.pages.Registration.employeeService
 
          Exception: java.lang.RuntimeException
-           Message: Error obtaining injected value for field com.alok.pages.Registration.employeeService: No service implements the interface com.alok.services.service.EmployeeService.
+           Message: Error obtaining injected value for field com.alok.pages.Registration.employeeService: No service implements the interface com.alok.services.EmployeeService.
 
          Exception: java.lang.RuntimeException
-           Message: No service implements the interface com.alok.services.service.EmployeeService.
+           Message: No service implements the interface com.alok.services.EmployeeService.
 
   Stack trace:
 

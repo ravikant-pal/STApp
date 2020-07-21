@@ -1,8 +1,8 @@
 package com.alok.pages;
 
-import com.alok.dto.EmployeeDTO;
+import com.alok.dto.EmployeeDetailsDTO;
 import com.alok.entities.Employee;
-import com.alok.services.service.EmployeeService;
+import com.alok.services.Impl.EmployeeServiceImpl;
 import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.ioc.annotations.Inject;
@@ -16,23 +16,23 @@ import java.util.List;
 public class Details {
 
     @Property
-    private List<EmployeeDTO> employees;
+    private List<EmployeeDetailsDTO> employees;
 
     @Property
-    private EmployeeDTO employee;
+    private EmployeeDetailsDTO employee;
 
     @Inject
-    private EmployeeService employeeService;
+    private EmployeeServiceImpl employeeServiceImpl;
 
     void setupRender() {
         // Get all persons - ask business service to find them (from the database)
         employees =  getListOfEmployee();
     }
 
-    public List<EmployeeDTO> getListOfEmployee() {
-        List<EmployeeDTO> employeeList = new ArrayList<>();
-        employeeService.getAll().forEach(i-> {
-            employeeList.add(new EmployeeDTO(((Employee) i).getId(), ((Employee) i).getFirstName(), ((Employee) i).getLastName(), ((Employee) i).getAge(), ((Employee) i).getAddress(), ((Employee) i).getEmail()));
+    public List<EmployeeDetailsDTO> getListOfEmployee() {
+        List<EmployeeDetailsDTO> employeeList = new ArrayList<>();
+        employeeServiceImpl.getAll().forEach(i-> {
+            employeeList.add(new EmployeeDetailsDTO(((Employee) i).getId(), ((Employee) i).getFirstName(), ((Employee) i).getLastName(), ((Employee) i).getAge(), ((Employee) i).getAddress(), ((Employee) i).getEmail()));
         });
         return employeeList;
     }

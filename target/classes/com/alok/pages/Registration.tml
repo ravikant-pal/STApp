@@ -1,0 +1,21 @@
+<html t:type="layout" title="Employee Login | STApp"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 shadow p-3 mb-5 rounded mt-5">
+        <h2 class="text-center">Employee Sign up</h2>
+        <hr/>
+        <t:beaneditform submitlabel="Sign up" object="newEmployee">
+            <p:address>
+                <t:label for="address"/>
+                <t:TextArea t:id="address" value="newEmployee.address" class="mb-2"/>
+            </p:address>
+            <p:password>
+                <t:label for="password"/>
+                <t:passwordfield t:id="password" value="newEmployee.password" class="mb-5"/>
+            </p:password>
+        </t:beaneditform>
+    </div>
+</div>
+</html>

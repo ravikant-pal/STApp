@@ -1,8 +1,8 @@
 package com.alok.pages;
 
 import com.alok.entities.Employee;
+import com.alok.services.Impl.EmployeeServiceImpl;
 import com.alok.services.Impl.ValidateEmployeeServiceImpl;
-import com.alok.services.service.EmployeeService;
 import org.apache.tapestry5.alerts.AlertManager;
 import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.InjectPage;
@@ -43,14 +43,14 @@ public class Login {
   private Details details;
 
   @Inject
-  private ValidateEmployeeServiceImpl validateEmployeeService;
+  private ValidateEmployeeServiceImpl validateEmployeeServiceImpl;
 
   @Inject
-  private EmployeeService employeeService;
+  private EmployeeServiceImpl employeeServiceImpl;
 
   void onValidateFromLogin() {
-    System.out.println(validateEmployeeService+"=================================>");
-    if(!validateEmployeeService.validate(email,password)) {
+    System.out.println(validateEmployeeServiceImpl+"=================================>");
+    if(!validateEmployeeServiceImpl.validate(email,password)) {
       login.recordError(emailField, " Invalid! ");
       login.recordError(passwordField, " Invalid! ");
     }
@@ -58,7 +58,7 @@ public class Login {
 
 
   Object onSuccessFromLogin() {
-    Employee employee = employeeService.getByEmail(email);
+    Employee employee = employeeServiceImpl.getByEmail(email);
     logger.info("Login successful!");
     alertManager.success("Welcome aboard!");
     dashboard.set(employee.getId());

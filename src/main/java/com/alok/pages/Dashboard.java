@@ -1,10 +1,9 @@
 package com.alok.pages;
 
 import com.alok.entities.Employee;
-import com.alok.services.service.EmployeeService;
+import com.alok.services.Impl.EmployeeServiceImpl;
 import org.apache.tapestry5.annotations.Property;
-
-import javax.ejb.EJB;
+import org.apache.tapestry5.ioc.annotations.Inject;
 
 
 public class Dashboard {
@@ -12,8 +11,8 @@ public class Dashboard {
     @Property
     private long personId;
 
-    @EJB
-    private EmployeeService employeeService;
+    @Inject
+    private EmployeeServiceImpl employeeServiceImpl;
 
     @Property
     private Employee employee;
@@ -36,7 +35,7 @@ public class Dashboard {
     // To return more than one parameter, use Long[], or List<Long>, or Object[], or List<Object>.
 
     Long onPassivate() {
-        employee = employeeService.getById(personId);
+        employee = employeeServiceImpl.getById(personId);
         return personId;
     }
 }

@@ -1,7 +1,7 @@
 package com.alok.dto;
 
 
-public class EmployeeDTO {
+public class EmployeeDetailsDTO {
     public Long id;
 
     public String firstName;
@@ -14,7 +14,7 @@ public class EmployeeDTO {
 
     private String email;
 
-    public EmployeeDTO(Long id, String firstName, String lastName, int age, String address, String email) {
+    public EmployeeDetailsDTO(Long id, String firstName, String lastName, int age, String address, String email) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
