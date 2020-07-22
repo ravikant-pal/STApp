@@ -1,9 +1,19 @@
 package com.alok.pages;
 
+import com.alok.dto.EmployeeDetailsDTO;
 import com.alok.entities.Employee;
 import com.alok.services.Impl.EmployeeServiceImpl;
+import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.Property;
+import org.apache.tapestry5.corelib.components.Zone;
 import org.apache.tapestry5.ioc.annotations.Inject;
+import org.apache.tapestry5.services.Request;
+import org.apache.tapestry5.services.ajax.AjaxResponseRenderer;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class Dashboard {
@@ -16,6 +26,21 @@ public class Dashboard {
 
     @Property
     private Employee employee;
+
+    @InjectComponent
+    private Zone detailsZone;
+
+    @Property
+    private List<EmployeeDetailsDTO> listOfEmployees;
+
+    @Property
+    private EmployeeDetailsDTO employeeDetailsDTO;
+
+    @Inject
+    private AjaxResponseRenderer ajaxResponseRenderer;
+
+    @Inject
+    private Request request;
 
     // The code
 
@@ -38,4 +63,10 @@ public class Dashboard {
         employee = employeeServiceImpl.getById(personId);
         return personId;
     }
+
+    void onRefreshZone() {
+        listOfEmployees = employeeServiceImpl.getAll().stream().map(emp-> new EmployeeDetailsDTO(emp.getId(),emp.getFirstName(), emp.getLastName(), emp.getAge(), emp.getAddress(), emp.getEmail())).collect(Collectors.toList());
+        ajaxResponseRenderer.addRender(detailsZone);
+    }
+
 }

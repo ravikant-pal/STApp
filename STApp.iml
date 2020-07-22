@@ -12,6 +12,19 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.postgresql:postgresql:42.2.14" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.tapestry:tapestry-spring:5.4.5" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-web:3.1.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-beans:4.3.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-core:4.3.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-context:4.3.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-aop:4.3.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-expression:4.3.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-orm:4.1.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:4.1.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-tx:4.1.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.apache.tapestry:tapestry-core:5.4.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.tapestry:tapestry-ioc:5.4.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.tapestry:tapestry-func:5.4.5" level="project" />
