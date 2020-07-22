@@ -26,6 +26,25 @@
             </tbody>
         </table>
     </div>
-    <t:pagelink page="Details" class="btn btn-success">Display all employee</t:pagelink>
+</div>
+<div class="row">
+    <t:eventlink event="refreshZone" t:zone="detailsZone" class="btn btn-success">Display all employee</t:eventlink>
+</div>
+<div class="row">
+    <t:zone t:id="detailsZone" id="detailsZone">
+        <t:if test="listOfEmployees">
+            <div class="col-md-12 shadow mb-5 rounded mt-5">
+                <h2 class="text-center">Employees Details</h2>
+                <hr/>
+                <t:grid source="listOfEmployees" row="employeeDetailsDTO" exclude="version" rowsPerPage="4"
+                        pagerPosition="top">
+                    <p:idCell>
+                        <t:pagelink page="Dashboard" context="employeeDetailsDTO.id">${employeeDetailsDTO.id}
+                        </t:pagelink>
+                    </p:idCell>
+                </t:grid>
+            </div>
+        </t:if>
+    </t:zone>
 </div>
 </html>
