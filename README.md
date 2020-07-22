@@ -14,7 +14,10 @@ This project is Simple Tapestry Application
 ![Screenshots](Screenshots/emp_login_failed.png "login failed page screenshot")
 
 ### 6. Employee Dashboard.
-![Screenshots](Screenshots/emp_dashboard.png "home page screenshot")
+![Screenshots](Screenshots/emp_dashboard.png "dashboard page screenshot")
 
 ### 6. All Employees Details.
-![Screenshots](Screenshots/emps_details.png "home page screenshot")
+![Screenshots](Screenshots/emps_details.png "employee details page screenshot")
+
+### 7. All Employees Details with Ajax.
+![Screenshots](Screenshots/ajax.png "employee list with ajax screenshot")
