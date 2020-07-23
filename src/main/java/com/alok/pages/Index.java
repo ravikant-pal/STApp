@@ -4,6 +4,7 @@ package com.alok.pages;
 import org.apache.tapestry5.Block;
 import org.apache.tapestry5.EventContext;
 import org.apache.tapestry5.SymbolConstants;
+import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.InjectPage;
 import org.apache.tapestry5.annotations.Log;
 import org.apache.tapestry5.annotations.Property;
@@ -18,6 +19,7 @@ import java.util.Date;
 /**
  * Start page of application STApp.
  */
+
 public class Index
 {
   @Inject
@@ -73,4 +75,5 @@ public class Index
   {
     return new Date();
   }
+
 }
