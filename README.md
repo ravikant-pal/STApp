@@ -21,3 +21,6 @@ This project is Simple Tapestry Application
 
 ### 7. All Employees Details with Ajax.
 ![Screenshots](Screenshots/ajax.png "employee list with ajax screenshot")
+
+### 7. Index page with Reusable component ***header***.
+![Screenshots](Screenshots/reusable_component.png "employee list with ajax screenshot")
