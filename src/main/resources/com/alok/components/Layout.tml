@@ -38,17 +38,31 @@
     <t:pagelink page="registration" class="btn btn-success my-2 mr-2 my-sm-0">Sign up</t:pagelink>
     <t:pagelink page="login" class="btn btn-success my-2 ml-2 my-sm-0">Sign in</t:pagelink>
 </nav>
+<nav class="navbar navbar-light bg-light d-flex flex-column flex-md-row align-items-center px-md-4 border-bottom shadow-lg navbar-expand-sm">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list"
+            aria-controls="navbar-list-4" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand my-0 mr-md-auto font-weight-normal" href="#">
+        Company name : Tapestry
+    </a>
+    <div class="collapse navbar-collapse" id="navbar-list">
+        <ul class="navbar-nav mr-auto mt-lg-0">
+        </ul>
+    </div>
+    <t:companynameandaddresscomponent value="message"/>
+</nav>
+
 
 <div class="container">
     <div class="row">
-        <div class="span12">
+        <div class="col-md-12 span">
             <t:alerts/>
         </div>
     </div>
 </div>
 
 <div class="container">
-
     <t:body/>
 
     <hr/>

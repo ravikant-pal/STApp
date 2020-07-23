@@ -1,0 +1,7 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<t:content>
+    <div class="bold-etc">
+        <strong><em>${value}</em></strong>
+    </div>
+</t:content>
+</html>
