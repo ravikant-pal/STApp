@@ -57,6 +57,8 @@ public class AppModule
         // the first locale name is the default when there's no reasonable match).
         configuration.add(SymbolConstants.SUPPORTED_LOCALES, "en");
 
+//        configuration.add(SymbolConstants.JAVASCRIPT_INFRASTRUCTURE_PROVIDER, "jquery");
+
 
         // Set the HMAC pass phrase to secure object data serialized to client
 //        configuration.add(SymbolConstants.HMAC_PASSPHRASE, "");

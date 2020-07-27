@@ -6,3 +6,14 @@
                 -webkit-border-radius: 6px;
                 -mox-border-radius: 6px;
 }
+.js-required {
+                color: red;
+                display: block;
+                margin-bottom: 14px;
+}
+
+.js-recommended {
+                color: red;
+                display: block;
+                margin-bottom: 14px;
+}
