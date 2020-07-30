@@ -1,0 +1,56 @@
+<html t:type="layout" title="Update Details | STApp"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 shadow p-3 mb-5 bg-white rounded mt-5">
+        <t:form t:id="edit">
+            <h2 class="text-center">Edit Details</h2>
+            <hr/>
+            <div class="form-group mt-2">
+                <t:textfield class="form-control" t:id="firstName" validate="required" placeholder="First Name"/>
+            </div>
+            <div class="form-group mt-2">
+                <t:textfield class="form-control" t:id="lastName" validate="required" placeholder="Last Name"/>
+            </div>
+            <div class="form-group mt-2">
+                <t:textfield t:id="age" type="number" validate="required" placeholder="Age" onkeyup="validateAge()"/>
+            </div>
+            <div class="form-group">
+                <t:submit class="btn btn-large btn-success" value="Update"/>
+            </div>
+        </t:form>
+    </div>
+</div>
+<script type="text/javascript">
+    /*$("#age").change(function()
+    {
+        let value = $(this).val();
+        if(value==='')
+        {
+            $(this).addClass("text-danger");
+            $(this).focus();
+        }else
+        {
+            $(this).removeClass("text-success");
+        }
+    });*/
+    function validateAge() {
+        let ageElement = document.getElementById('age');
+        let age = parseInt(ageElement.value);
+        console.log(age);
+        console.log(typeof age);
+
+        if(!isNaN(age)) {
+            console.log(age==120);
+            if (age == 120) {
+                ageElement.classList.remove('text-success');
+                ageElement.classList.add('text-danger');
+            } else {
+                ageElement.classList.remove('text-danger');
+                ageElement.classList.add('text-success');
+            }
+        }
+    }
+</script>
+</html>

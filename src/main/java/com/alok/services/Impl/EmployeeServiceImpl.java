@@ -39,4 +39,11 @@ public class EmployeeServiceImpl implements EmployeeService {
                 newEmployee.getPassword());
         employeeDao.save(employee);
     }
+    public void update(Long id,String firstName,String lastName, int age) {
+        Employee employee = employeeDao.findById(id);
+        employee.setFirstName(firstName);
+        employee.setLastName(lastName);
+        employee.setAge(age);
+//        employeeDao.save(employee);
+    }
 }
