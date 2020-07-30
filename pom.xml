@@ -88,6 +88,11 @@
             <artifactId>spring-orm</artifactId>
             <version>4.1.6.RELEASE</version>
         </dependency>
+<!--        <dependency>
+            <groupId>org.apache.tapestry</groupId>
+            <artifactId>tapestry-beanvalidator</artifactId>
+            <version>${tapestry-release-version}</version>
+        </dependency>-->
     </dependencies>
     <build>
         <finalName>STApp</finalName>

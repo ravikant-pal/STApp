@@ -4,6 +4,7 @@ import com.alok.entities.Employee;
 import com.alok.services.Impl.EmployeeServiceImpl;
 import com.alok.services.Impl.ValidateEmployeeServiceImpl;
 import org.apache.tapestry5.alerts.AlertManager;
+import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.InjectPage;
 import org.apache.tapestry5.annotations.Property;
@@ -13,6 +14,7 @@ import org.apache.tapestry5.corelib.components.TextField;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.slf4j.Logger;
 
+@Import(stylesheet = "context:css/style.css")
 public class Login {
 
   @Inject
@@ -40,7 +42,7 @@ public class Login {
   private String password;
 
   @InjectPage
-  private Details details;
+  private AllEmployee allEmployee;
 
   @Inject
   private ValidateEmployeeServiceImpl validateEmployeeServiceImpl;
@@ -48,8 +50,15 @@ public class Login {
   @Inject
   private EmployeeServiceImpl employeeServiceImpl;
 
+/*  @Inject
+  private JavaScriptSupport javaScriptSupport;
+
+
+  public void afterRender() {
+    javaScriptSupport.require("main");
+  }*/
   void onValidateFromLogin() {
-    System.out.println(validateEmployeeServiceImpl+"=================================>");
+    logger.info(validateEmployeeServiceImpl+"=================================>");
     if(!validateEmployeeServiceImpl.validate(email,password)) {
       login.recordError(emailField, " Invalid! ");
       login.recordError(passwordField, " Invalid! ");

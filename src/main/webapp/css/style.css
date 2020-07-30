@@ -1,10 +1,20 @@
 .eg {
-                margin: 20px 0;
-                padding: 14px;
-                border: 1px solid #ddd;
-                border-radius: 6px;
-                -webkit-border-radius: 6px;
-                -mox-border-radius: 6px;
+    margin: 20px 0;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -mox-border-radius: 6px;
+}
+.js-required {
+    color: red;
+    display: block;
+    margin-bottom: 14px;
+}
+.js-recommended {
+    color: red;
+    display: block;
+    margin-bottom: 14px;
 }
 .bold-etc {
                 border: 20px solid #f5f5dc;

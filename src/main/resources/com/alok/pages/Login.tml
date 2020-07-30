@@ -1,6 +1,6 @@
 <html t:type="layout" title="Employee Login | STApp"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
-      xmlns:p="tapestry:parameter">
+>
 
 <div class="row">
     <div class="col-md-6 col-md-offset-3 shadow p-3 mb-5 bg-white rounded mt-5">
@@ -19,8 +19,8 @@
             <div class="form-group">
                 <t:submit class="btn btn-large btn-success" value="Sign in"/>
             </div>
-
         </t:form>
     </div>
 </div>
+
 </html>

@@ -5,9 +5,7 @@ import com.alok.services.Impl.EmployeeServiceImpl;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
-
-public class Dashboard {
-
+public class SingleEmployee {
     @Property
     private long empId;
 
