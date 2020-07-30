@@ -47,4 +47,8 @@ public class Layout
     return new String[]{"Index", "About", "Contact"};
   }
 
+  public String getMessage() {
+    return "Address : Bangalore India.";
+  }
+
 }
