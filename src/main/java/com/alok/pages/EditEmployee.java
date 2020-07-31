@@ -3,6 +3,7 @@ package com.alok.pages;
 import com.alok.services.Impl.EmployeeServiceImpl;
 import com.alok.services.Impl.ValidateEmployeeServiceImpl;
 import org.apache.tapestry5.alerts.AlertManager;
+import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.InjectPage;
 import org.apache.tapestry5.annotations.Property;
@@ -10,7 +11,7 @@ import org.apache.tapestry5.corelib.components.Form;
 import org.apache.tapestry5.corelib.components.TextField;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.slf4j.Logger;
-
+@Import(library = {"context:jquery/age-validation.js"})
 public class EditEmployee {
     @Inject
     private Logger logger;

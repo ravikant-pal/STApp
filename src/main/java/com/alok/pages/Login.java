@@ -14,7 +14,7 @@ import org.apache.tapestry5.corelib.components.TextField;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.slf4j.Logger;
 
-@Import(stylesheet = "context:css/style.css")
+@Import(stylesheet = {"context:css/style.css"})
 public class Login {
 
   @Inject
@@ -50,13 +50,6 @@ public class Login {
   @Inject
   private EmployeeServiceImpl employeeServiceImpl;
 
-/*  @Inject
-  private JavaScriptSupport javaScriptSupport;
-
-
-  public void afterRender() {
-    javaScriptSupport.require("main");
-  }*/
   void onValidateFromLogin() {
     logger.info(validateEmployeeServiceImpl+"=================================>");
     if(!validateEmployeeServiceImpl.validate(email,password)) {

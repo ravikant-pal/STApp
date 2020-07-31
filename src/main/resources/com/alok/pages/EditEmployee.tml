@@ -8,49 +8,26 @@
             <h2 class="text-center">Edit Details</h2>
             <hr/>
             <div class="form-group mt-2">
-                <t:textfield class="form-control" t:id="firstName" validate="required" placeholder="First Name"/>
+                <label class="col-md-12 control-label m-0 p-0" for="firstNme">First Name</label>
+                <t:textfield class="form-control" t:id="firstName" validate="required" />
             </div>
             <div class="form-group mt-2">
-                <t:textfield class="form-control" t:id="lastName" validate="required" placeholder="Last Name"/>
+                <label class="col-md-12 control-label m-0 p-0" for="lastName">Last Name</label>
+                <t:textfield class="form-control" t:id="lastName" validate="required"/>
             </div>
             <div class="form-group mt-2">
-                <t:textfield t:id="age" type="number" validate="required" placeholder="Age" onkeyup="validateAge()"/>
+                <label class="col-md-12 control-label m-0 p-0" for="age">Age
+                    <span id="popover-age-top" class="hide pull-right block-help">
+                        <i class="fa fa-info-circle text-danger" aria-hidden="true"></i>
+                        Enter a valid Age
+                    </span>
+                </label>
+                <t:textfield t:id="age" type="number" validate="required"/>
             </div>
             <div class="form-group">
-                <t:submit class="btn btn-large btn-success" value="Update"/>
+                <t:submit class="btn btn-large btn-success" id="update" value="Update"/>
             </div>
         </t:form>
     </div>
 </div>
-<script type="text/javascript">
-    /*$("#age").change(function()
-    {
-        let value = $(this).val();
-        if(value==='')
-        {
-            $(this).addClass("text-danger");
-            $(this).focus();
-        }else
-        {
-            $(this).removeClass("text-success");
-        }
-    });*/
-    function validateAge() {
-        let ageElement = document.getElementById('age');
-        let age = parseInt(ageElement.value);
-        console.log(age);
-        console.log(typeof age);
-
-        if(!isNaN(age)) {
-            console.log(age==120);
-            if (age == 120) {
-                ageElement.classList.remove('text-success');
-                ageElement.classList.add('text-danger');
-            } else {
-                ageElement.classList.remove('text-danger');
-                ageElement.classList.add('text-success');
-            }
-        }
-    }
-</script>
 </html>
