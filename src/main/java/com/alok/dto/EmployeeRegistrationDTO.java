@@ -1,5 +1,8 @@
 package com.alok.dto;
 
+
+import java.sql.Date;
+
 public class EmployeeRegistrationDTO {
 
     private String firstName;
@@ -13,6 +16,8 @@ public class EmployeeRegistrationDTO {
     private String email;
 
     private String password;
+
+    private Date birthday;
 
     public String getFirstName() {
         return firstName;
@@ -60,5 +65,13 @@ public class EmployeeRegistrationDTO {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 }

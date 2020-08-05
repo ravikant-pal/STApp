@@ -2,7 +2,9 @@
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
       xmlns:p="tapestry:parameter">
 <div class="row mt-5">
-    <t:eventlink event="refreshZone" t:zone="detailsZone" class="btn btn-success col-md-6 col-md-offset-3">Display all employee</t:eventlink>
+    <t:eventlink event="refreshZone" t:zone="detailsZone" class="btn btn-success col-md-6 col-md-offset-3">Display all
+        employee
+    </t:eventlink>
 </div>
 <div class="row">
     <div class="col-md-12 shadow mb-5 rounded mt-5">
@@ -10,7 +12,7 @@
             <t:if test="employees">
                 <h2 class="text-center">Employees Details</h2>
                 <hr/>
-                <t:grid source="employees" row="employee" add="action" exclude="version" rowsPerPage="4"
+                <t:grid source="employees" row="employee" add="action,image" exclude="version" rowsPerPage="4"
                         pagerPosition="top">
                     <p:idCell>
                         <t:pagelink page="SingleEmployee" context="employee.id">${employee.id}
@@ -19,9 +21,20 @@
                     <p:actionCell>
                         <t:pagelink page="EditEmployee" context="employee.id" href="#">Edit</t:pagelink>
                     </p:actionCell>
+                    <p:imageCell>
+<!--                        <t:eventlink event="toUpdate" context="employee.id" async="true">Image</t:eventlink>-->
+                        <a class="btn btn-sm text-primary" onclick="showModel()">Image</a>
+                    </p:imageCell>
                 </t:grid>
             </t:if>
         </t:zone>
     </div>
+</div>
+
+<!-- The Modal -->
+<div id="image-model" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img-cnt"/>
+    <div id="caption"></div>
 </div>
 </html>

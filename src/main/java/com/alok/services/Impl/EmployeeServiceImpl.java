@@ -36,7 +36,8 @@ public class EmployeeServiceImpl implements EmployeeService {
                 newEmployee.getAge(),
                 newEmployee.getAddress(),
                 newEmployee.getEmail(),
-                newEmployee.getPassword());
+                newEmployee.getPassword(),
+                newEmployee.getBirthday());
         employeeDao.save(employee);
     }
     public void update(Long id,String firstName,String lastName, int age) {
