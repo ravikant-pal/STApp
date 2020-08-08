@@ -1,0 +1,49 @@
+<html t:type="layout" title="Update Details | STApp"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 shadow p-3 mb-5 bg-white rounded mt-5">
+        <t:form t:id="edit">
+            <h2 class="text-center">Edit Details</h2>
+            <hr/>
+            <div class="form-group mt-2">
+                <label class="col-md-12 control-label m-0 p-0" for="firstName">First Name</label>
+                <t:textfield class="form-control" t:id="firstName" validate="required" t:value="employee.firstName" placeholder="First Name"/>
+            </div>
+            <div class="form-group mt-2">
+                <label class="col-md-12 control-label m-0 p-0" for="lastName">Last Name</label>
+                <t:textfield class="form-control" t:id="lastName" validate="required" t:value="employee.lastName" placeholder="Last Name"/>
+            </div>
+            <div class="form-group mt-2">
+                <label class="col-md-12 control-label m-0 p-0" for="email">Email</label>
+                <t:textfield class="form-control" t:id="email" validate="required" t:value="employee.email" type="email" placeholder="Email address"/>
+            </div>
+            <div class="form-group mt-2">
+                <label class="col-md-12 control-label m-0 p-0" for="password">Password</label>
+                <t:passwordfield class="form-control" t:id="password" validate="required" t:value="employee.password" placeholder="Password"/>
+            </div>
+            <div class="form-group mt-2">
+                <label class="col-md-12 control-label m-0 p-0" for="image">Image</label>
+                <t:textfield class="form-control" t:id="image"  type="url" validate="required" t:value="employee.image" placeholder="Insert Link to your Image"/>
+            </div>
+            <div class="form-group mt-2">
+                <label class="col-md-12 control-label m-0 p-0" for="age">Age
+                    <span id="popover-age-top" class="hide pull-right block-help">
+                        <i class="fa fa-info-circle text-danger" aria-hidden="true"></i>
+                        Enter a valid Age
+                    </span>
+                </label>
+                <t:textfield class="form-control" t:id="age" type="number" t:value="employee.age" validate="required" placeholder="Age"/>
+            </div>
+            <div class="form-group mt-2">
+                <label class="col-md-12 control-label m-0 p-0" for="address">Address</label>
+                <t:TextArea class="form-control" t:id="address" value="employee.address" validate="required" placeholder="Address"/>
+            </div>
+            <div class="form-group">
+                <t:submit class="btn btn-large btn-success" id="update" value="Update"/>
+            </div>
+        </t:form>
+    </div>
+</div>
+</html>

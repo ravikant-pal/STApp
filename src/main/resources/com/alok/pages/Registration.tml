@@ -1,0 +1,40 @@
+<html t:type="layout" title="Employee Sign Up | STApp"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 shadow p-3 mb-5 bg-white rounded mt-5">
+        <t:form t:id="register">
+            <h2 class="text-center">Employee Sign Up</h2>
+            <hr/>
+            <div class="form-group mt-2">
+                <t:textfield class="form-control" t:id="firstName" validate="required" placeholder="First Name"/>
+            </div>
+            <div class="form-group mt-2">
+                <t:textfield class="form-control" t:id="lastName" validate="required" placeholder="Last Name"/>
+            </div>
+            <div class="form-group mt-2">
+                <t:textfield class="form-control" t:id="email" validate="required" type="email" placeholder="Email address"/>
+            </div>
+            <div class="form-group mt-2">
+                <t:passwordfield class="form-control" t:id="password" validate="required" placeholder="Password"/>
+            </div>
+            <div class="form-group mt-2">
+                <t:textfield class="form-control" t:id="image"  type="url" validate="required" placeholder="Insert Link to your Image"/>
+            </div>
+            <div class="form-group mt-2">
+                <t:textfield class="form-control" t:id="age" type="number" validate="required" placeholder="Age"/>
+            </div>
+            <div class="form-group mt-2">
+                <t:TextArea t:id="address"></t:TextArea>
+            </div>
+            <div class="form-group mt-2">
+                <t:DateField t:id="dob" t:format="prop:dateInFormatStr"/>
+            </div>
+            <div class="form-group">
+                <t:submit class="btn btn-large btn-success" value="Sign Up"/>
+            </div>
+        </t:form>
+    </div>
+</div>
+</html>

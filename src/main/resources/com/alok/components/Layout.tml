@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+>
+<head>
+    <meta charset="utf-8"/>
+    <title>${title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="${asset:context:/favicon.ico}"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-dark bg-dark d-flex navbar-fixed-top flex-column flex-md-row align-items-center px-md-4 border-bottom shadow-lg navbar-expand-sm">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4"
+            aria-controls="navbar-list-4" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand my-0 mr-md-auto font-weight-normal" href="#">
+        STApp
+    </a>
+    <div class="collapse navbar-collapse" id="navbar-list-4">
+        <ul class="navbar-nav mr-auto mt-lg-0">
+            <t:loop source="pageNames" value="pageName">
+                <t:any element="li" class="prop:classForPageName">
+                    <t:pagelink page="prop:pageName" class="nav-link">${pageName}</t:pagelink>
+                </t:any>
+            </t:loop>
+        </ul>
+    </div>
+    <t:pagelink page="registration" class="btn btn-success my-2 mr-2 my-sm-0">Sign up</t:pagelink>
+    <t:pagelink page="login" class="btn btn-success my-2 ml-2 my-sm-0">Sign in</t:pagelink>
+</nav>
+<nav class="navbar navbar-light bg-light d-flex flex-column flex-md-row align-items-center px-md-4 border-bottom shadow-lg navbar-expand-sm">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list"
+            aria-controls="navbar-list-4" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand my-0 mr-md-auto font-weight-normal" href="#">
+        Company name : Tapestry
+    </a>
+    <div class="collapse navbar-collapse" id="navbar-list">
+        <ul class="navbar-nav mr-auto mt-lg-0">
+        </ul>
+    </div>
+    <t:companynameandaddresscomponent value="message"/>
+</nav>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 span">
+            <t:alerts/>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <t:body/>
+
+    <hr/>
+
+    <footer>
+        <p>&copy; Your Company 2015</p>
+    </footer>
+
+</div> <!-- /container -->
+
+</body>
+</html>
