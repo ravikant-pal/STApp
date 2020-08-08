@@ -13,7 +13,7 @@ import org.apache.tapestry5.services.ajax.AjaxResponseRenderer;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Import(stylesheet = "context:css/style.css")
+@Import(stylesheet = "context:css/popup.css",library = {"context:jquery/popup-image.js"})
 public class AllEmployee {
 
     @Property

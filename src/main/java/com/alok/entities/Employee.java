@@ -2,6 +2,8 @@ package com.alok.entities;
 
 
 import javax.persistence.*;
+import java.sql.Date;
+
 
 @Entity
 @Table(name = "emp_table")
@@ -31,16 +33,20 @@ public class Employee {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "birthday")
+    private Date birthday;
+
     public Employee() {
     }
 
-    public Employee(String firstName, String lastName, int age, String address, String email, String password) {
+    public Employee(String firstName, String lastName, int age, String address, String email, String password,Date birthday) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.address = address;
         this.email = email;
         this.password = password;
+        this.birthday = birthday;
     }
 
     public Long getId() {
@@ -97,6 +103,14 @@ public class Employee {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 
     @Override
