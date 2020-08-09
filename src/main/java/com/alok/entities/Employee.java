@@ -42,10 +42,12 @@ public class Employee {
 //    @Column(name = "dob")
     private Date dob;
 
+    private String gender;
+
     public Employee() {
     }
 
-    public Employee(String firstName, String lastName, String email, String password, String image, int age, String address, Date dob) {
+    public Employee(String firstName, String lastName, String email, String password, String image, int age, String address, Date dob,String gender) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -54,6 +56,7 @@ public class Employee {
         this.age = age;
         this.address = address;
         this.dob = dob;
+        this.gender = gender;
     }
 
     public Long getId() {
@@ -126,6 +129,14 @@ public class Employee {
 
     public void setDob(Date dob) {
         this.dob = dob;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     @Override

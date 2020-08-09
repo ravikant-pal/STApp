@@ -31,6 +31,10 @@
             <div class="form-group mt-2">
                 <t:DateField t:id="dob" t:format="prop:dateInFormatStr"/>
             </div>
+            <div class="form-group mt-2">
+                <t:Select t:id="select" t:model="literal:Male,Female" t:value="gender"/>
+            </div>
+
             <div class="form-group">
                 <t:submit class="btn btn-large btn-success" value="Sign Up"/>
             </div>

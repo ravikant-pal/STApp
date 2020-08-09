@@ -794,7 +794,7 @@ true posixrules
     <database id="3" parent="1" name="emp_db">
       <ObjectId>33645</ObjectId>
       <Owner>app_user</Owner>
-      <IntrospectionStateNumber>12502</IntrospectionStateNumber>
+      <IntrospectionStateNumber>12518</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
     <database id="4" parent="1" name="omidev">
@@ -872,7 +872,7 @@ default_tablespace=imsdevdata</Config>
       <Comment>standard public schema</Comment>
       <StateNumber>276</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>12503</IntrospectionStateNumber>
+      <IntrospectionStateNumber>12519</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <access-method id="20" parent="3" name="heap">
@@ -951,7 +951,7 @@ default_tablespace=imsdevdata</Config>
     <table id="33" parent="19" name="emp_table">
       <ObjectId>33683</ObjectId>
       <Owner>app_user</Owner>
-      <StateNumber>12500</StateNumber>
+      <StateNumber>12517</StateNumber>
     </table>
     <column id="34" parent="33" name="id">
       <Position>1</Position>
@@ -1009,14 +1009,20 @@ default_tablespace=imsdevdata</Config>
       <StateNumber>12500</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="43" parent="33" name="emp_table_pkey">
+    <column id="43" parent="33" name="gender">
+      <Position>10</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>12517</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="44" parent="33" name="emp_table_pkey">
       <ObjectId>33689</ObjectId>
       <StateNumber>12500</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="44" parent="33" name="emp_table_pkey">
+    <key id="45" parent="33" name="emp_table_pkey">
       <ObjectId>33690</ObjectId>
       <StateNumber>12500</StateNumber>
       <ColNames>id</ColNames>

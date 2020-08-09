@@ -5,6 +5,9 @@ import com.alok.services.Impl.EmployeeServiceImpl;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class Dashboard {
 
@@ -16,6 +19,12 @@ public class Dashboard {
 
     @Property
     private Employee employee;
+
+    @Property
+    private Boolean isTodayBirthDay = false;
+
+    @Property
+    private Boolean isMale = false;
 
 
     // The code
@@ -37,6 +46,16 @@ public class Dashboard {
 
     Long onPassivate() {
         employee = employeeServiceImpl.getById(empId);
+        String birthDate = new SimpleDateFormat("MM/dd").format(employee.getDob());
+        String today = new SimpleDateFormat("dd/MM").format(new Date());
+        if(today.equals(birthDate)) {
+            isTodayBirthDay = true;
+        }
+        if(employee.getGender().equals("Male")) {
+            isMale = true;
+        }
         return empId;
     }
+
+
 }

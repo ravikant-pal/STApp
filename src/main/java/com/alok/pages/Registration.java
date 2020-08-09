@@ -79,8 +79,8 @@ public class Registration {
     // We could return a DateFormat, but instead we'll return a String which DateField will coerce into a DateFormat.
     private String dateInFormatStr = "dd/MM/yyyy";
 
-
-
+    @Property
+    private String gender;
 
     @Inject
     private EmployeeServiceImpl employeeServiceImpl;
@@ -120,10 +120,10 @@ public class Registration {
 
     }
     Object onSuccessFromRegister() {
-        Employee newEmployee = new Employee(firstName,lastName,email,password,image,Integer.parseInt(age),address,dob);
+        Employee newEmployee = new Employee(firstName,lastName,email,password,image,Integer.parseInt(age),address,dob,gender);
         employeeServiceImpl.save(newEmployee);
         logger.info("Registration successful!");
-        logger.info(firstName+ lastName+ email+ password+ image+ age+ address+ dob);
+        logger.info(firstName+ lastName+ email+ password+ image+ age+ address+ dob+ gender+"===================>");
         alertManager.success("Registration successful, Please Login!");
         return login;
     }

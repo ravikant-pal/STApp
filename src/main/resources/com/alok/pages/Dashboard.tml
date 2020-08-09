@@ -1,6 +1,15 @@
 <html t:type="layout" title="Employee Details | STApp"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
       xmlns:p="tapestry:parameter">
+<t:if test="isTodayBirthDay">
+    <t:if test="isMale">
+        <h2 class="text-center text-primary">Hey It's Your Birthday</h2>
+    </t:if>
+    <t:if test="!isMale">
+        <h2 class="text-center" style="color: #FF1493">Hey It's Your Birthday</h2>
+    </t:if>
+    <t:empbday/>
+</t:if>
 <div class="row">
     <div class="col-md-12 shadow mb-5 rounded mt-5">
         <h2 class="text-center">Details</h2>
