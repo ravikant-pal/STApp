@@ -1,7 +1,7 @@
 # STApp
 This project is Simple Tapestry Application
 ## Screenshots
-### 1. Home
+### 1. Home with Reusable component ***header***.
 ![Screenshots](Screenshots/home.png "home page screenshot")
 
 ### 2. Employee Login.
@@ -13,14 +13,14 @@ This project is Simple Tapestry Application
 ### 4. Login Failed.
 ![Screenshots](Screenshots/emp_login_failed.png "login failed page screenshot")
 
-### 6. Employee Dashboard.
+### 5. Employee Dashboard.
 ![Screenshots](Screenshots/emp_dashboard.png "dashboard page screenshot")
 
-### 6. All Employees Details.
-![Screenshots](Screenshots/emps_details.png "employee details page screenshot")
+### 6. All Employees Detail with Ajax.
+![Screenshots](Screenshots/emps_details.png "employee list with ajax screenshot")
 
-### 7. All Employees Details with Ajax.
-![Screenshots](Screenshots/ajax.png "employee list with ajax screenshot")
+### 7. Showing Image In Popup
+![Screenshots](Screenshots/image-popup.png "employee list with ajax screenshot")
 
-### 7. Index page with Reusable component ***header***.
-![Screenshots](Screenshots/reusable_component.png "employee list with ajax screenshot")
+### 8. Employee Edit Page
+![Screenshots](Screenshots/edit.png "employee list with ajax screenshot")

@@ -38,8 +38,8 @@
     <bean id="dataSource" class="org.apache.tomcat.dbcp.dbcp.BasicDataSource">
         <property name="driverClassName" value="org.postgresql.Driver" />
         <property name="url" value="jdbc:postgresql://localhost/emp_db?characterEncoding=UTF-8" />
-        <property name="username" value="app_user" />
-        <property name="password" value="app_password" />
+        <property name="username" value="test_user" />
+        <property name="password" value="test_password" />
     </bean>
 
 </beans>
